@@ -13,6 +13,7 @@ public class UserEntity {
     @Id
     private String id;
     private String phoneNumber;
+    private String password;
     private String firstName;
     private String lastName;
     private String idType;

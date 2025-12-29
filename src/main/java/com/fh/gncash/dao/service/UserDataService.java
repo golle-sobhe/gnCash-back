@@ -18,7 +18,6 @@ public class UserDataService {
         this.userJpaRepository = userJpaRepository;
     }
 
-
     public List<User> getAll() {
         return userJpaRepository.findAll()
                 .stream()
@@ -41,6 +40,9 @@ public class UserDataService {
         UserEntity entity = userJpaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException());
         entity.setPhoneNumber(user.phoneNumber());
+        if (user.password() != null) {
+            entity.setPassword(user.password());
+        }
         entity.setFirstName(user.firstName());
         entity.setLastName(user.lastName());
         entity.setIdType(user.idType());

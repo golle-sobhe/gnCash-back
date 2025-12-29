@@ -12,6 +12,7 @@ public class UserMapper {
         UserEntity entity = new UserEntity();
         entity.setId(user.id());
         entity.setPhoneNumber(user.phoneNumber());
+        entity.setPassword(user.password());
         entity.setFirstName(user.firstName());
         entity.setLastName(user.lastName());
         entity.setIdType(user.idType());
@@ -26,10 +27,10 @@ public class UserMapper {
         return new User(
                 entity.getId(),
                 entity.getPhoneNumber(),
+                entity.getPassword(),
                 entity.getFirstName(),
                 entity.getLastName(),
                 entity.getIdType(),
-                entity.getRole()
-        );
+                entity.getRole());
     }
 }
